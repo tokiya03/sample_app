@@ -13,8 +13,9 @@ class ListsController < ApplicationController
       redirect_to list_path(@list.id)
     else
     # 4-2. 対象のカラムのデータが入力されていなければ、新規投稿ページを再表示
-      # render :new
-      redirect_to new_list_path
+      render :new
+      # 以下はnewアクションを経由してnew.html.erbに渡す処理となるため間違い！ (= 入力データが空になる)
+      # redirect_to new_list_path
     end
   end
 
