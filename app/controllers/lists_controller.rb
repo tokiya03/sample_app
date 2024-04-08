@@ -10,6 +10,7 @@ class ListsController < ApplicationController
     # 3. 対象のカラムにデータが入力されていたら、データをデータベースに保存するためのsaveメソッド実行
     if @list.save
     # 4-1. 詳細画面へリダイレクト
+    flash[:notice] = "投稿に成功しました。"
       redirect_to list_path(@list.id)
     else
     # 4-2. 対象のカラムのデータが入力されていなければ、新規投稿ページを再表示
