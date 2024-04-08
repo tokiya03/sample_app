@@ -14,6 +14,7 @@ class ListsController < ApplicationController
       redirect_to list_path(@list.id)
     else
     # 4-2. 対象のカラムのデータが入力されていなければ、新規投稿ページを再表示
+      flash.now[:alert] = "保存に失敗しました。"
       render :new
       # 以下はnewアクションを経由してnew.html.erbに渡す処理となるため間違い！ (= 入力データが空になる)
       # redirect_to new_list_path
