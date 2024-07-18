@@ -24,6 +24,10 @@
   </span>
 
   <p>画像</p>
-  <%= image_tag list.image, size: "200x200" %>
+  <% if list.image.attached? %>
+    <%= image_tag list.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200x200" %>
+  <% end %>
 
 <% end %>
